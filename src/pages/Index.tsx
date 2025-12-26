@@ -34,18 +34,28 @@ const Index = () => {
     const choice = currentScene.choices.find(c => c.id === choiceId);
     if (!choice) return;
 
-    setGameState(prev => ({
-      ...prev,
-      ...choice.effect,
-      current_scene: choice.next_scene,
-      choices_made: { ...prev.choices_made, [currentScene.id]: choiceId },
-      visited_scenes: [...prev.visited_scenes, currentScene.id],
-      trust_neighbors: Math.max(0, Math.min(10, (prev.trust_neighbors || 0) + (choice.effect.trust_neighbors || 0))),
-      memory_level: Math.max(0, Math.min(10, (prev.memory_level || 0) + (choice.effect.memory_level || 0))),
-      fear_level: Math.max(0, Math.min(10, (prev.fear_level || 0) + (choice.effect.fear_level || 0))),
-      entity_attention: Math.max(0, Math.min(10, (prev.entity_attention || 0) + (choice.effect.entity_attention || 0))),
-      key_items: [...prev.key_items, ...(choice.effect.key_items || [])]
-    }));
+    setGameState(prev => {
+      const hasPills = prev.key_items.includes('pills');
+      
+      // Если у игрока есть таблетки и он на сцене выбора - показать вариант с таблетками
+      let nextScene = choice.next_scene;
+      if (choice.next_scene === 'chapter3_3_1_check' && hasPills) {
+        nextScene = 'chapter3_3_1_pills';
+      }
+      
+      return {
+        ...prev,
+        ...choice.effect,
+        current_scene: nextScene,
+        choices_made: { ...prev.choices_made, [currentScene.id]: choiceId },
+        visited_scenes: [...prev.visited_scenes, currentScene.id],
+        trust_neighbors: Math.max(0, Math.min(10, (prev.trust_neighbors || 0) + (choice.effect.trust_neighbors || 0))),
+        memory_level: Math.max(0, Math.min(10, (prev.memory_level || 0) + (choice.effect.memory_level || 0))),
+        fear_level: Math.max(0, Math.min(10, (prev.fear_level || 0) + (choice.effect.fear_level || 0))),
+        entity_attention: Math.max(0, Math.min(10, (prev.entity_attention || 0) + (choice.effect.entity_attention || 0))),
+        key_items: [...prev.key_items, ...(choice.effect.key_items || [])]
+      };
+    });
   };
 
   const resetGame = () => {
@@ -114,6 +124,7 @@ const Index = () => {
                         <Badge key={item} variant="outline" className="bg-stone-800 border-stone-600">
                           {item === 'photo' && '📸 Фото'}
                           {item === 'pills' && '💊 Лекарства'}
+                          {item === 'bear' && '🧸 Мишка'}
                         </Badge>
                       ))}
                     </div>
