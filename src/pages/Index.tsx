@@ -147,7 +147,18 @@ const Index = () => {
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8 max-w-4xl pb-32">
-        <div className={`min-h-[60vh] ${glitchEffect ? 'animate-pulse' : ''}`}>
+        {/* Background Image */}
+        {currentScene.background && (
+          <div className="fixed inset-0 z-0 overflow-hidden">
+            <div 
+              className="absolute inset-0 bg-cover bg-center opacity-20 blur-sm"
+              style={{ backgroundImage: `url(${currentScene.background})` }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/90 via-zinc-950/80 to-zinc-950/95" />
+          </div>
+        )}
+
+        <div className={`relative z-10 min-h-[60vh] ${glitchEffect ? 'animate-pulse' : ''}`}>
           {/* Scene Title */}
           <div className="mb-8">
             <h2 className="text-3xl font-bold text-stone-100 mb-2">{currentScene.title}</h2>

@@ -11,7 +11,7 @@ export const scenes: Record<string, Scene> = {
       'Или это я стал больше?',
       'Неделя. Через неделю его снесут. Всё, что осталось от мамы, нужно забрать сегодня.',
     ],
-    background: 'entrance',
+    background: 'https://cdn.poehali.dev/projects/e056ccbe-f23f-40ad-817a-201d65fbe0c8/files/c5ef1d56-cb29-4b73-a034-eaf6da64851b.jpg',
     sound: 'rain',
     choices: [
       {
@@ -39,7 +39,7 @@ export const scenes: Record<string, Scene> = {
       'Странно. Я не помню, чтобы это было здесь раньше.',
       'Или помню?',
     ],
-    background: 'entrance',
+    background: 'https://cdn.poehali.dev/projects/e056ccbe-f23f-40ad-817a-201d65fbe0c8/files/c5ef1d56-cb29-4b73-a034-eaf6da64851b.jpg',
     choices: [
       {
         id: 'continue',
@@ -61,7 +61,7 @@ export const scenes: Record<string, Scene> = {
       'Рядом — записка от руки. Красными чернилами, неровными буквами:',
       '«НЕ НАЖИМАЙ 7»',
     ],
-    background: 'entrance_board',
+    background: 'https://cdn.poehali.dev/projects/e056ccbe-f23f-40ad-817a-201d65fbe0c8/files/c5ef1d56-cb29-4b73-a034-eaf6da64851b.jpg',
     choices: [
       {
         id: 'tear',
@@ -88,7 +88,7 @@ export const scenes: Record<string, Scene> = {
       '«ОН УЖЕ ЗНАЕТ»',
       'Холод пробегает по спине. Я быстро комкаю бумажку и иду к лифту.',
     ],
-    background: 'entrance_board',
+    background: 'https://cdn.poehali.dev/projects/e056ccbe-f23f-40ad-817a-201d65fbe0c8/files/c5ef1d56-cb29-4b73-a034-eaf6da64851b.jpg',
     choices: [
       {
         id: 'continue',
@@ -109,7 +109,7 @@ export const scenes: Record<string, Scene> = {
       'Но между 6 и 8 — странный зазор. Слишком широкий.',
       'На металле видны глубокие царапины. Словно кто-то пытался выцарапать ещё одну кнопку.',
     ],
-    background: 'elevator',
+    background: 'https://cdn.poehali.dev/projects/e056ccbe-f23f-40ad-817a-201d65fbe0c8/files/103e1ed7-7918-430b-8c9e-af16caed6bde.jpg',
     sound: 'elevator_hum',
     choices: [
       {
@@ -145,7 +145,7 @@ export const scenes: Record<string, Scene> = {
       '4... 5... 6...',
       'Лифт останавливается. Двери открываются.',
     ],
-    background: 'elevator',
+    background: 'https://cdn.poehali.dev/projects/e056ccbe-f23f-40ad-817a-201d65fbe0c8/files/103e1ed7-7918-430b-8c9e-af16caed6bde.jpg',
     sound: 'elevator_moving',
     choices: [
       {
@@ -168,7 +168,7 @@ export const scenes: Record<string, Scene> = {
       'Все окна зачёркнуты.',
       'Поднимаюсь дальше. 4-й... 5-й... 6-й этаж.',
     ],
-    background: 'staircase',
+    background: 'https://cdn.poehali.dev/projects/e056ccbe-f23f-40ad-817a-201d65fbe0c8/files/7a58c774-2e9c-44b5-9793-adf60b12f871.jpg',
     choices: [
       {
         id: 'continue',
@@ -192,7 +192,7 @@ export const scenes: Record<string, Scene> = {
       'Я отдёргиваю его руку. «Нельзя туда», — говорю я.',
       'Видение исчезает. Пальцы дрожат.',
     ],
-    background: 'elevator',
+    background: 'https://cdn.poehali.dev/projects/e056ccbe-f23f-40ad-817a-201d65fbe0c8/files/103e1ed7-7918-430b-8c9e-af16caed6bde.jpg',
     choices: [
       {
         id: 'floor6_after',
@@ -217,7 +217,7 @@ export const scenes: Record<string, Scene> = {
       '— Что вы имеете в виду?',
       '— Ты ведь уже возвращался... тогда.',
     ],
-    background: 'corridor',
+    background: 'https://cdn.poehali.dev/projects/e056ccbe-f23f-40ad-817a-201d65fbe0c8/files/77164bdb-bcaa-43b0-b472-42dce6aae62c.jpg',
     choices: [
       {
         id: 'ask',
@@ -246,7 +246,7 @@ export const scenes: Record<string, Scene> = {
       '— Лучше так. Лучше не помнить. — Она торопливо уходит к себе в квартиру. — Не поднимайся выше шестого. Прошу.',
       'Дверь захлопывается.',
     ],
-    background: 'corridor',
+    background: 'https://cdn.poehali.dev/projects/e056ccbe-f23f-40ad-817a-201d65fbe0c8/files/77164bdb-bcaa-43b0-b472-42dce6aae62c.jpg',
     choices: [
       {
         id: 'continue',
@@ -268,7 +268,7 @@ export const scenes: Record<string, Scene> = {
       'Всё на месте. Старая мебель. Фотографии на стенах.',
       'На столе — пузырьки с таблетками. Много таблеток.',
     ],
-    background: 'apartment',
+    background: 'https://cdn.poehali.dev/projects/e056ccbe-f23f-40ad-817a-201d65fbe0c8/files/b20fc9f7-e1a7-47b7-903e-ceaa8fffb409.jpg',
     choices: [
       {
         id: 'photos',
@@ -304,7 +304,7 @@ export const scenes: Record<string, Scene> = {
       '«НЕ ОСТАВЛЯЙ ЕГО ОДНОГО»',
       'Кого? Кого не оставлять?',
     ],
-    background: 'apartment',
+    background: 'https://cdn.poehali.dev/projects/e056ccbe-f23f-40ad-817a-201d65fbe0c8/files/b20fc9f7-e1a7-47b7-903e-ceaa8fffb409.jpg',
     choices: [
       {
         id: 'pills',
@@ -333,7 +333,7 @@ export const scenes: Record<string, Scene> = {
       'Я никогда не принимал таких лекарств.',
       'Или принимал?',
     ],
-    background: 'apartment',
+    background: 'https://cdn.poehali.dev/projects/e056ccbe-f23f-40ad-817a-201d65fbe0c8/files/b20fc9f7-e1a7-47b7-903e-ceaa8fffb409.jpg',
     choices: [
       {
         id: 'continue',
@@ -361,7 +361,7 @@ export const scenes: Record<string, Scene> = {
       'На панели горит цифра.',
       '«7»',
     ],
-    background: 'corridor_dark',
+    background: 'https://cdn.poehali.dev/projects/e056ccbe-f23f-40ad-817a-201d65fbe0c8/files/77164bdb-bcaa-43b0-b472-42dce6aae62c.jpg',
     sound: 'tension',
     choices: [
       {
@@ -388,7 +388,7 @@ export const scenes: Record<string, Scene> = {
       '',
       'Продолжение истории Алексея — скоро.',
     ],
-    background: 'black',
+    background: 'https://cdn.poehali.dev/projects/e056ccbe-f23f-40ad-817a-201d65fbe0c8/files/c5ef1d56-cb29-4b73-a034-eaf6da64851b.jpg',
     choices: [
       {
         id: 'restart',
