@@ -36,11 +36,24 @@ const Index = () => {
 
     setGameState(prev => {
       const hasPills = prev.key_items.includes('pills');
+      const hasPhoto = prev.key_items.includes('photo');
+      const hasBear = prev.key_items.includes('bear');
+      const hasAllItems = hasPills && hasPhoto && hasBear;
       
       // Если у игрока есть таблетки и он на сцене выбора - показать вариант с таблетками
       let nextScene = choice.next_scene;
       if (choice.next_scene === 'chapter3_3_1_check' && hasPills) {
         nextScene = 'chapter3_3_1_pills';
+      }
+      
+      // Секретная концовка: все предметы собраны + высокая память
+      if (choice.next_scene === 'chapter3_secret_check') {
+        const newMemory = Math.max(0, Math.min(10, (prev.memory_level || 0) + (choice.effect.memory_level || 0)));
+        if (hasAllItems && newMemory >= 7) {
+          nextScene = 'ending_cycle';
+        } else {
+          nextScene = 'ending_acceptance'; // Обычная хорошая концовка
+        }
       }
       
       return {
