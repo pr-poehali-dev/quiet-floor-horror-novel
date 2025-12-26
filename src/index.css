@@ -62,4 +62,28 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Мобильная оптимизация */
+  @media (max-width: 640px) {
+    html {
+      font-size: 14px;
+    }
+  }
+
+  /* Улучшение touch-таргетов для мобильных */
+  @media (pointer: coarse) {
+    button {
+      min-height: 44px;
+    }
+  }
+
+  /* Предотвращение pull-to-refresh на iOS */
+  body {
+    overscroll-behavior-y: contain;
+  }
+
+  /* Плавная прокрутка */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
 }

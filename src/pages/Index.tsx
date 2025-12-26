@@ -83,14 +83,14 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-zinc-950 via-zinc-900 to-stone-950 text-stone-200 font-serif">
       {/* Menu */}
       {showMenu && (
-        <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center animate-fade-in backdrop-blur-sm">
-          <Card className="bg-gradient-to-b from-zinc-900/95 to-black/95 border-red-950/50 p-8 max-w-md w-full mx-4 shadow-2xl">
-            <h2 className="text-3xl font-bold mb-6 text-center text-stone-100 tracking-wider">МЕНЮ</h2>
+        <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center animate-fade-in backdrop-blur-sm p-3 sm:p-4">
+          <Card className="bg-gradient-to-b from-zinc-900/95 to-black/95 border-red-950/50 p-5 sm:p-6 md:p-8 max-w-md w-full shadow-2xl max-h-[90vh] overflow-y-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-center text-stone-100 tracking-wider">МЕНЮ</h2>
             
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               <Button 
                 onClick={() => setShowMenu(false)} 
-                className="w-full bg-gradient-to-r from-stone-800 to-stone-700 hover:from-stone-700 hover:to-stone-600 text-stone-100 py-6 text-lg shadow-lg"
+                className="w-full bg-gradient-to-r from-stone-800 to-stone-700 active:from-stone-700 active:to-stone-600 hover:from-stone-700 hover:to-stone-600 text-stone-100 py-4 sm:py-5 md:py-6 text-base sm:text-lg shadow-lg"
               >
                 Продолжить
               </Button>
@@ -98,52 +98,52 @@ const Index = () => {
               <Button 
                 onClick={resetGame} 
                 variant="outline"
-                className="w-full border-2 border-red-900/50 text-stone-300 hover:bg-red-950/30 hover:border-red-800 py-6 text-lg"
+                className="w-full border-2 border-red-900/50 text-stone-300 active:bg-red-950/30 active:border-red-800 hover:bg-red-950/30 hover:border-red-800 py-4 sm:py-5 md:py-6 text-base sm:text-lg"
               >
                 Начать заново
               </Button>
 
-              <div className="pt-6 border-t border-stone-800 space-y-4">
-                <h3 className="text-lg font-semibold text-stone-200 uppercase tracking-wider">Статистика</h3>
-                <div className="space-y-3 text-sm">
+              <div className="pt-4 sm:pt-6 border-t border-stone-800 space-y-3 sm:space-y-4">
+                <h3 className="text-base sm:text-lg font-semibold text-stone-200 uppercase tracking-wider">Статистика</h3>
+                <div className="space-y-2.5 sm:space-y-3 text-xs sm:text-sm">
                   <div>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-stone-400 flex items-center gap-2">
-                        <Icon name="Brain" size={16} />
+                    <div className="flex justify-between mb-1.5 sm:mb-2">
+                      <span className="text-stone-400 flex items-center gap-1.5 sm:gap-2">
+                        <Icon name="Brain" size={14} className="sm:w-4 sm:h-4" />
                         Память
                       </span>
                       <span className="text-stone-300 font-bold">{gameState.memory_level}/10</span>
                     </div>
-                    <Progress value={gameState.memory_level * 10} className="h-2.5 bg-stone-950" />
+                    <Progress value={gameState.memory_level * 10} className="h-2 sm:h-2.5 bg-stone-950" />
                   </div>
                   <div>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-stone-400 flex items-center gap-2">
-                        <Icon name="Heart" size={16} />
+                    <div className="flex justify-between mb-1.5 sm:mb-2">
+                      <span className="text-stone-400 flex items-center gap-1.5 sm:gap-2">
+                        <Icon name="Heart" size={14} className="sm:w-4 sm:h-4" />
                         Страх
                       </span>
                       <span className="text-red-400 font-bold">{gameState.fear_level}/10</span>
                     </div>
-                    <Progress value={gameState.fear_level * 10} className="h-2.5 bg-stone-950 [&>div]:bg-red-900" />
+                    <Progress value={gameState.fear_level * 10} className="h-2 sm:h-2.5 bg-stone-950 [&>div]:bg-red-900" />
                   </div>
                   <div>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-stone-400 flex items-center gap-2">
-                        <Icon name="Eye" size={16} />
+                    <div className="flex justify-between mb-1.5 sm:mb-2">
+                      <span className="text-stone-400 flex items-center gap-1.5 sm:gap-2">
+                        <Icon name="Eye" size={14} className="sm:w-4 sm:h-4" />
                         Внимание Сущности
                       </span>
                       <span className="text-red-600 font-bold">{gameState.entity_attention}/10</span>
                     </div>
-                    <Progress value={gameState.entity_attention * 10} className="h-2.5 bg-stone-950 [&>div]:bg-red-950 [&>div]:shadow-lg [&>div]:shadow-red-900/50" />
+                    <Progress value={gameState.entity_attention * 10} className="h-2 sm:h-2.5 bg-stone-950 [&>div]:bg-red-950 [&>div]:shadow-lg [&>div]:shadow-red-900/50" />
                   </div>
                 </div>
 
                 {gameState.key_items.length > 0 && (
-                  <div className="pt-4 border-t border-stone-800">
-                    <h4 className="text-sm font-semibold mb-3 text-stone-300 uppercase tracking-wider">Предметы:</h4>
+                  <div className="pt-3 sm:pt-4 border-t border-stone-800">
+                    <h4 className="text-xs sm:text-sm font-semibold mb-2 sm:mb-3 text-stone-300 uppercase tracking-wider">Предметы:</h4>
                     <div className="flex flex-wrap gap-2">
                       {gameState.key_items.map(item => (
-                        <Badge key={item} variant="outline" className="bg-stone-950 border-stone-700 text-base py-1 px-3">
+                        <Badge key={item} variant="outline" className="bg-stone-950 border-stone-700 text-sm sm:text-base py-1 px-2.5 sm:px-3">
                           {item === 'photo' && '📸 Фото'}
                           {item === 'pills' && '💊 Лекарства'}
                           {item === 'bear' && '🧸 Мишка'}
@@ -160,20 +160,20 @@ const Index = () => {
 
       {/* Header */}
       <header className="border-b border-red-950/30 bg-black/60 backdrop-blur-md sticky top-0 z-40 shadow-lg">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div className="container mx-auto px-3 sm:px-4 py-3 sm:py-4 flex items-center justify-between">
           <div>
-            <h1 className={`text-3xl font-bold tracking-wider font-sans ${glitchEffect ? 'animate-glitch text-red-400' : 'text-stone-100'}`}>
+            <h1 className={`text-xl sm:text-2xl md:text-3xl font-bold tracking-wider font-sans ${glitchEffect ? 'animate-glitch text-red-400' : 'text-stone-100'}`}>
               ТИХИЙ ЭТАЖ
             </h1>
-            <p className="text-xs text-stone-500 uppercase tracking-widest mt-1 animate-flicker">{currentScene.chapter}</p>
+            <p className="text-[10px] sm:text-xs text-stone-500 uppercase tracking-widest mt-0.5 sm:mt-1 animate-flicker">{currentScene.chapter}</p>
           </div>
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setShowMenu(true)}
-            className="text-stone-400 hover:text-stone-100 hover:bg-stone-800/50 transition-all"
+            className="text-stone-400 hover:text-stone-100 hover:bg-stone-800/50 transition-all w-10 h-10 sm:w-12 sm:h-12"
           >
-            <Icon name="Menu" size={24} />
+            <Icon name="Menu" size={20} className="sm:w-6 sm:h-6" />
           </Button>
         </div>
       </header>
@@ -191,25 +191,25 @@ const Index = () => {
       )}
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8 max-w-5xl pb-32 relative z-10">
-        <div className={`min-h-[70vh] flex flex-col justify-end ${glitchEffect ? 'animate-pulse' : ''}`}>
+      <main className="container mx-auto px-0 sm:px-4 py-0 sm:py-8 max-w-5xl pb-24 sm:pb-32 relative z-10">
+        <div className={`min-h-[70vh] sm:min-h-[70vh] flex flex-col justify-end ${glitchEffect ? 'animate-pulse' : ''}`}>
           
           {/* Text Content - Bottom Third */}
-          <div className="bg-gradient-to-t from-black/95 via-black/90 to-transparent backdrop-blur-md border-t border-stone-800/50 rounded-t-xl p-8 shadow-2xl">
+          <div className="bg-gradient-to-t from-black/95 via-black/90 to-transparent backdrop-blur-md border-t border-stone-800/50 rounded-t-xl sm:rounded-t-2xl p-4 sm:p-6 md:p-8 shadow-2xl">
             {/* Scene Title */}
-            <div className="mb-6">
-              <h2 className="text-2xl font-bold text-stone-100 mb-1 tracking-wide">{currentScene.title}</h2>
+            <div className="mb-4 sm:mb-6">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-stone-100 mb-1 tracking-wide">{currentScene.title}</h2>
               <div className="h-px bg-gradient-to-r from-red-900/50 via-stone-700 to-transparent"></div>
             </div>
 
             {/* Text with better typography */}
-            <div className="space-y-4 mb-8 min-h-[200px]">
+            <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 min-h-[150px] sm:min-h-[200px] max-h-[40vh] sm:max-h-none overflow-y-auto">
               {currentScene.text.slice(0, textIndex).map((paragraph, idx) => (
                 <p
                   key={idx}
-                  className={`text-xl leading-relaxed text-stone-200 ${
+                  className={`text-base sm:text-lg md:text-xl leading-relaxed text-stone-200 ${
                     idx === textIndex - 1 && isTyping ? 'animate-fade-in' : ''
-                  } ${paragraph === '' ? 'h-4' : ''}`}
+                  } ${paragraph === '' ? 'h-3 sm:h-4' : ''}`}
                 >
                   {paragraph}
                 </p>
@@ -218,17 +218,17 @@ const Index = () => {
 
             {/* Choices - Styled as elegant buttons */}
             {textIndex >= currentScene.text.length && (
-              <div className="space-y-3 animate-fade-in pt-4 border-t border-stone-800/50">
+              <div className="space-y-2 sm:space-y-3 animate-fade-in pt-3 sm:pt-4 border-t border-stone-800/50">
                 {currentScene.choices.map((choice, idx) => (
                   <Button
                     key={choice.id}
                     onClick={() => handleChoice(choice.id)}
-                    className="w-full justify-between text-left h-auto py-5 px-6 bg-gradient-to-r from-stone-900/80 to-stone-800/60 hover:from-stone-800 hover:to-stone-700 border-2 border-stone-700/50 hover:border-red-900/50 text-stone-100 transition-all duration-300 group shadow-lg hover:shadow-red-900/20"
+                    className="w-full justify-between text-left h-auto py-3 px-4 sm:py-4 sm:px-5 md:py-5 md:px-6 bg-gradient-to-r from-stone-900/80 to-stone-800/60 active:from-stone-800 active:to-stone-700 hover:from-stone-800 hover:to-stone-700 border-2 border-stone-700/50 active:border-red-900/50 hover:border-red-900/50 text-stone-100 transition-all duration-300 group shadow-lg active:shadow-red-900/20 hover:shadow-red-900/20"
                     variant="outline"
                     style={{ animationDelay: `${idx * 100}ms` }}
                   >
-                    <span className="text-lg font-medium">{choice.text}</span>
-                    <Icon name="ChevronRight" size={24} className="flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+                    <span className="text-sm sm:text-base md:text-lg font-medium pr-2">{choice.text}</span>
+                    <Icon name="ChevronRight" size={20} className="flex-shrink-0 group-hover:translate-x-1 group-active:translate-x-1 transition-transform sm:w-6 sm:h-6" />
                   </Button>
                 ))}
               </div>
@@ -238,32 +238,34 @@ const Index = () => {
       </main>
 
       {/* Stats Bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-black/80 backdrop-blur-md border-t border-red-950/30 py-4 shadow-2xl">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="grid grid-cols-3 gap-6 text-xs">
+      <div className="fixed bottom-0 left-0 right-0 bg-black/80 backdrop-blur-md border-t border-red-950/30 py-2 sm:py-3 md:py-4 shadow-2xl">
+        <div className="container mx-auto px-3 sm:px-4 max-w-5xl">
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 text-[10px] sm:text-xs">
             <div className="group">
-              <div className="flex items-center gap-2 mb-2 text-stone-300 group-hover:text-stone-100 transition-colors">
-                <Icon name="Brain" size={16} />
-                <span className="font-semibold uppercase tracking-wider">Память</span>
-                <span className="ml-auto text-stone-500">{gameState.memory_level}/10</span>
+              <div className="flex items-center gap-1 sm:gap-2 mb-1 sm:mb-2 text-stone-300 group-hover:text-stone-100 transition-colors">
+                <Icon name="Brain" size={12} className="sm:w-4 sm:h-4" />
+                <span className="font-semibold uppercase tracking-wider hidden sm:inline">Память</span>
+                <span className="font-semibold uppercase tracking-wider sm:hidden">Пам.</span>
+                <span className="ml-auto text-stone-500 text-[9px] sm:text-xs">{gameState.memory_level}/10</span>
               </div>
-              <Progress value={gameState.memory_level * 10} className="h-2 bg-stone-900" />
+              <Progress value={gameState.memory_level * 10} className="h-1.5 sm:h-2 bg-stone-900" />
             </div>
             <div className="group">
-              <div className="flex items-center gap-2 mb-2 text-stone-300 group-hover:text-red-400 transition-colors">
-                <Icon name="Heart" size={16} />
+              <div className="flex items-center gap-1 sm:gap-2 mb-1 sm:mb-2 text-stone-300 group-hover:text-red-400 transition-colors">
+                <Icon name="Heart" size={12} className="sm:w-4 sm:h-4" />
                 <span className="font-semibold uppercase tracking-wider">Страх</span>
-                <span className="ml-auto text-stone-500">{gameState.fear_level}/10</span>
+                <span className="ml-auto text-stone-500 text-[9px] sm:text-xs">{gameState.fear_level}/10</span>
               </div>
-              <Progress value={gameState.fear_level * 10} className="h-2 bg-stone-900 [&>div]:bg-red-900" />
+              <Progress value={gameState.fear_level * 10} className="h-1.5 sm:h-2 bg-stone-900 [&>div]:bg-red-900" />
             </div>
             <div className="group">
-              <div className="flex items-center gap-2 mb-2 text-stone-300 group-hover:text-red-600 transition-colors">
-                <Icon name="Eye" size={16} />
-                <span className="font-semibold uppercase tracking-wider">Сущность</span>
-                <span className="ml-auto text-stone-500">{gameState.entity_attention}/10</span>
+              <div className="flex items-center gap-1 sm:gap-2 mb-1 sm:mb-2 text-stone-300 group-hover:text-red-600 transition-colors">
+                <Icon name="Eye" size={12} className="sm:w-4 sm:h-4" />
+                <span className="font-semibold uppercase tracking-wider hidden sm:inline">Сущность</span>
+                <span className="font-semibold uppercase tracking-wider sm:hidden">Сущ.</span>
+                <span className="ml-auto text-stone-500 text-[9px] sm:text-xs">{gameState.entity_attention}/10</span>
               </div>
-              <Progress value={gameState.entity_attention * 10} className="h-2 bg-stone-900 [&>div]:bg-red-950 [&>div]:shadow-lg [&>div]:shadow-red-900/50" />
+              <Progress value={gameState.entity_attention * 10} className="h-1.5 sm:h-2 bg-stone-900 [&>div]:bg-red-950 [&>div]:shadow-lg [&>div]:shadow-red-900/50" />
             </div>
           </div>
         </div>
